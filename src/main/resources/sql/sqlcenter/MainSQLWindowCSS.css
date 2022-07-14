@@ -1,0 +1,31 @@
+.root{
+    -fx-font-family: "Courier New";
+}
+.labelHeader{
+    -fx-font-size: 15;
+    -fx-font-weight: 700;
+}
+.windowButton{
+    -fx-background-radius: 25;
+    -fx-min-height: 20;
+    -fx-max-height: 20;
+    -fx-min-width: 20;
+    -fx-focus-color: transparent;
+    -fx-border-radius: 0;
+    -fx-font-size: 10;
+    -fx-background-insets: 0;
+    -fx-font-width: 900;
+}
+#executeButton{
+    -fx-background-color: #6FCD58;
+}
+#executeButton:hover{
+    -fx-background-color: #7EC16D;
+}
+.topToolbar #closeButton:hover{
+    -fx-background-color: red;
+}
+
+.button:hover{
+    -fx-background-color: #a2afb3;
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import com.sun.javafx.scene.control.ContextMenuContent.MenuBox?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sql.sqlcenter.SQLJApplicationController"
+            prefHeight="400.0" prefWidth="700.0">
+        <top>
+            <VBox>
+                <ToolBar styleClass="topToolbar" onMousePressed="#headerPressed"
+                         onMouseDragged="#headerDrag">
+                    <Pane HBox.hgrow = "ALWAYS"/>
+                    <Button styleClass="windowButton" onAction="#onIconified"/>
+                    <Button styleClass="windowButton"
+                            id="closeButton" onAction="#onCloseButton"/>
+                </ToolBar>
+                <MenuBar>
+                    <menus>
+                        <Menu text="Options">
+                            <MenuItem text="Change user"></MenuItem>
+                        </Menu>
+                        <Menu text="Schemas" fx:id="schemasMenu">
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </VBox>
+        </top>
+        <center>
+            <TabPane fx:id="tabPane">
+                <tabs>
+                    <Tab text="add tuple" id="addTuple">
+                        <BorderPane>
+                            <left>
+                                <TableView fx:id="addPane">
+                                </TableView>
+
+                            </left>
+                            <right>
+                                <TextArea style="-fx-max-width: 300">
+                                </TextArea>
+                            </right>
+                        </BorderPane>
+                    </Tab>
+                    <!--<Tab text="delete tuple" id="deleteTuple" >
+                        <BorderPane>
+                            <left>
+                                <TableView fx:id="deletePane">
+                                </TableView>
+
+                            </left>
+                            <right>
+                                <TextArea style="-fx-max-width: 300">
+
+                                </TextArea>
+                            </right>
+                        </BorderPane>
+                    </Tab>-->
+                    <Tab text="get table" id="getTable">
+                        <BorderPane>
+                            <center>
+                                <ListView fx:id="getTableView">
+                                </ListView>
+                            </center>
+                        </BorderPane>
+                    </Tab>
+                </tabs>
+            </TabPane>
+        </center>
+        <bottom>
+            <ToolBar>
+                <Pane HBox.hgrow = "ALWAYS"/>
+                <Button text=">" onAction="#onExecuteClick"
+                        id="executeButton"
+                        styleClass="windowButton"
+                style="-fx-text-fill: White;
+                 -fx-font-weight: 900"/>
+            </ToolBar>
+        </bottom>
+    </BorderPane>
